@@ -12,8 +12,8 @@ const App = () => {
       <BrowserRouter basename="/test-webpack-react">
         <Routes>
           <Route path='/' element={<PageA />}></Route>
-          <Route path='/b' element={<PageB />}></Route>
-          <Route path='/c' element={<PageC />}></Route>
+          <Route path='b' element={<PageB />}></Route>
+          <Route path='c' element={<PageC />}></Route>
         </Routes>
       </BrowserRouter>
     </>
