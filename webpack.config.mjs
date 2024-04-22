@@ -31,7 +31,7 @@ const config = {
     path: join(__dirname),
     filename: 'dist/js/[name].[contenthash].js',
     chunkFilename: 'dist/js/[name].[contenthash].chunk.js',
-    publicPath: isDevelopment ? '/' : '/test-webpack-react',
+    publicPath: isDevelopment ? '/' : '/test-webpack-react/',
   },
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
