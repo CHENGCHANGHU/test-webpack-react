@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './index.scss';
 import { Suspense, lazy } from 'react';
 
-const PageA = lazy(() => import('@/page/PageA'));
-const PageB = lazy(() => import('@/page/PageB'));
-const PageC = lazy(() => import('@/page/PageC'));
+const PageA = lazy(() => import(/* webpackChunkName: "PageA" */'@/page/PageA'));
+const PageB = lazy(() => import(/* webpackChunkName: "PageB" */'@/page/PageB'));
+const PageC = lazy(() => import(/* webpackChunkName: "PageC" */'@/page/PageC'));
 
 const App = () => {
   return (
