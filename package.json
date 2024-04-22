@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "commit": "sh ./script/shell/commit.sh",
+    "commit-amend": "sh ./script/shell/commit-amend.sh",
     "start": "webpack serve --hot --node-env=development --mode development",
     "build": "webpack --node-env=production --mode production"
   },
