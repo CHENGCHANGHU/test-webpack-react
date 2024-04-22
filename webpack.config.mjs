@@ -2,7 +2,6 @@ import path, { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import CustomCleanPlugin from '@golden-tiger/custom-clean-plugin';
@@ -25,13 +24,13 @@ const config = {
   entry: {
     index: {
       import: join(__dirname, 'src', 'index.tsx'),
-      filename: 'js/index.js',
+      filename: 'dist/js/index.js',
     },
   },
   output: {
-    path: join(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].js',
-    chunkFilename: 'js/[name].[contenthash].chunk.js',
+    path: join(__dirname),
+    filename: 'dist/js/[name].[contenthash].js',
+    chunkFilename: 'dist/js/[name].[contenthash].chunk.js',
     publicPath: '/',
   },
   resolve: {
@@ -67,6 +66,7 @@ const config = {
     new CustomCleanPlugin([
       join(__dirname, 'dist'),
       join(__dirname, 'index.html'),
+      join(__dirname, '_redirects'),
     ]),
     new Dotenv({
       path: join(__dirname, '.env'),
@@ -80,9 +80,8 @@ const config = {
       publicPath: isDevelopment ? '/' : '/test-webpack-react',
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
+      filename: 'dist/css/[name].[contenthash].css',
     }),
-    isDevelopment ? undefined : new CleanWebpackPlugin(),
     isDevelopment ? undefined : new CopyWebpackPlugin({
       patterns: [
         {
@@ -106,7 +105,7 @@ const config = {
         react: {
           chunks: 'all',
           name: 'react',
-          filename: 'js/[name].chunk.js',
+          filename: 'dist/js/[name].chunk.js',
           test: /[\\/]node_modules[\\/]react/,
           priority: 22,
           enforce: true,
