@@ -9,7 +9,7 @@ const PageC = lazy(() => import('@/page/PageC'));
 const App = () => {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/test-webpack-react">
         <Routes>
           <Route path='/' element={<PageA />}></Route>
           <Route path='/b' element={<PageB />}></Route>
