@@ -22,7 +22,10 @@ const config = {
     // port: 8111,
   },
   entry: {
-    index: join(__dirname, 'src', 'index.tsx'),
+    index: {
+      import: join(__dirname, 'src', 'index.tsx'),
+      filename: 'js/index.js',
+    },
   },
   output: {
     path: join(__dirname, 'dist'),
@@ -84,6 +87,28 @@ const config = {
       ],
     }),
   ].filter(Boolean),
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 16000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+      cacheGroups: {
+        react: {
+          chunks: 'all',
+          name: 'react',
+          filename: 'js/[name].chunk.js',
+          test: /[\\/]node_modules[\\/]react/,
+          priority: 22,
+          enforce: true,
+          reuseExistingChunk: true,
+        },
+      },
+    },
+  },
 };
 
 export default config;
