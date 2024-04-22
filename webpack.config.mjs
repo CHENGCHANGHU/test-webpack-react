@@ -5,6 +5,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
+import CustomCleanPlugin from '@golden-tiger/custom-clean-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -63,6 +64,10 @@ const config = {
     ],
   },
   plugins: [
+    new CustomCleanPlugin([
+      join(__dirname, 'dist'),
+      join(__dirname, 'index.html'),
+    ]),
     new Dotenv({
       path: join(__dirname, '.env'),
       systemvars: true,
@@ -72,6 +77,7 @@ const config = {
       name: 'index.html',
       template: join(__dirname, '.', 'public', 'index.html'),
       chunks: ['index'],
+      publicPath: isDevelopment ? '/' : '/test-webpack-react',
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',

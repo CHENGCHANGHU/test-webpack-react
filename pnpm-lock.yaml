@@ -37,6 +37,9 @@ devDependencies:
   '@babel/preset-typescript':
     specifier: ^7.22.5
     version: 7.22.5(@babel/core@7.22.8)
+  '@golden-tiger/custom-clean-plugin':
+    specifier: ^0.0.1
+    version: 0.0.1
   '@types/react':
     specifier: ^18.2.14
     version: 18.2.14
@@ -1792,6 +1795,10 @@ packages:
   /@emotion/unitless@0.7.5:
     resolution: {integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==}
     dev: false
+
+  /@golden-tiger/custom-clean-plugin@0.0.1:
+    resolution: {integrity: sha512-tAecWDPiRP8HTnEKdbGouNYndI8ARhwCviTMAAB9lvqIPY+VErLftCiFVQMbWwEe0THtJffXaXS8etNihZMLkg==}
+    dev: true
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
