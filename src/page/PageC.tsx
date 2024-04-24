@@ -1,5 +1,5 @@
-import Editor from "@/component/Editor";
 import { useCallback, useRef } from "react";
+import { Editor } from "@/component";
 
 export default function() {
   const editor = useRef<any>(null);
