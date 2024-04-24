@@ -1,37 +1,65 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content=""><meta name="description" content=""><title>Resource Manager</title><style>* {
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      font-size: 12px;
-    }
-    body {
-      position: relative;
-    }
-    #root:has(> .loader) {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: center;
-    }
-    /* https://cssloaders.github.io/ */
-    #root > .loader {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: inline-block;
-      border-top: 3px solid #666;
-      border-right: 3px solid transparent;
-      box-sizing: border-box;
-      animation: rotation 0.7s linear infinite;
-    }
-    @keyframes rotation {
-      0% {
-        transform: rotate(0deg);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>Resource Manager</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
       }
-      100% {
-        transform: rotate(360deg);
+      html {
+        font-size: 12px;
       }
-    }</style><script defer="defer" src="/test-webpack-react/dist/js/react.chunk.js"></script><script defer="defer" src="/test-webpack-react/dist/js/1400.fd0e31edae5828843216.js"></script><script defer="defer" src="/test-webpack-react/dist/js/index.js"></script><link href="/test-webpack-react/dist/css/index.8c5b220bf6f482881a90.css" rel="stylesheet"></head><body><div id="root"><div class="loader"></div></div></body></html>
+      body {
+        position: relative;
+      }
+      #root:has(> .loader) {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+      }
+      /* https://cssloaders.github.io/ */
+      #root > .loader {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: inline-block;
+        border-top: 3px solid #666;
+        border-right: 3px solid transparent;
+        box-sizing: border-box;
+        animation: rotation 0.7s linear infinite;
+      }
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script
+      defer="defer"
+      src="/test-webpack-react/dist/js/react.chunk.js"
+    ></script>
+    <script
+      defer="defer"
+      src="/test-webpack-react/dist/js/400.7c18d0278c3ef51ecfed.js"
+    ></script>
+    <script defer="defer" src="/test-webpack-react/dist/js/index.js"></script>
+    <link
+      href="/test-webpack-react/dist/css/index.8c5b220bf6f482881a90.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"><div class="loader"></div></div>
+  </body>
+</html>
